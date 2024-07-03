@@ -25,6 +25,7 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 nav ul {
@@ -32,6 +33,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 nav ul li {
@@ -68,7 +70,6 @@ main {
     animation-delay: 0.5s; /* Delay to start the animation */
 }
 
-
 .section2 {
     display: flex;
     flex-direction: column;
@@ -83,7 +84,6 @@ main {
     animation: fadeIn 2s forwards; /* Apply fade-in animation */
     animation-delay: 0.5s; /* Delay to start the animation */
 }
-
 
 @keyframes fadeIn {
     from {
@@ -103,6 +103,7 @@ main {
     text-align: left;
     padding: 20px;
     background: #fff;
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 .hero-content {
@@ -110,6 +111,7 @@ main {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 .hero-image {
@@ -263,6 +265,7 @@ hr.section-divider {
     justify-content: space-between;
     width: 70%;
     margin-left: 20px;
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 .project-text {
@@ -294,4 +297,37 @@ hr.section-divider {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .hero-text h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-text h3 {
+        font-size: 1.5em;
+    }
+
+    .project-heading h1 {
+        font-size: 1.5em;
+    }
+
+    .project-text {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .project-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-image {
+        max-width: 100%;
+    }
 }
