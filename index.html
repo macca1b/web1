@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brendan MacCabe | CDP Expert</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Brendan MacCabe</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#tech">tech</a></li>
+                    <li><a href="#marketing">marketing</a></li>
+                    <li><a href="#value">value</a></li>
+                    <li><a href="#ambition">ambition</a></li>
+                    <li><a href="#about">about</a></li>
+                  </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="section hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Hello!</h2>
+                    <h3>I'm Brendan</h3>
+                    <h3>A CRM data solutions specialist</h3>
+                    <h3>based in Brighton, UK.</h3>
+                </div>
+                <img src="profile-placeholder.jpg" alt="Brendan MacCabe" class="hero-image">
+            </div>
+        </section>
+        <hr class="section-divider">
+
+       
+        <section id="tech" class="section">
+            <h2>tech</h2><br>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>Data visualisation, coding, virtual whiteboards...</h3>
+                    <p>Brief description of Project 1.</p>
+                    </div>
+                <div class="portfolio-item">
+                    <img src="project1.jpg" alt="Project 1">
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </section>
+        <hr class="section-divider">
+
+        <section id="marketing" class="section">
+            <h2>marketing</h2><br>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <span class="bullet-point"></span>
+                    <img src="project-placeholder.jpg" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>Brief description of Project 1.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="project-placeholder.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>Brief description of Project 2.</p>
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </section>
+        <hr class="section-divider">
+
+        <section id="value" class="section">
+            <h2>value</h2><br>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>Hands on technical...</h3>
+                    <p>Brief description of Project 1.</p>
+                    </div>
+                <div class="portfolio-item">
+                    <img src="project6.jpeg" alt="Project 2">
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </section>
+        <hr class="section-divider">
+
+
+        <section id="ambition" class="section">
+            <h2>ambition</h2><br>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <h3>Hands on technical...</h3>
+                    <p>Brief description of Project 1.</p>
+                    </div>
+                <div class="portfolio-item">
+                    <img src="project6.jpeg" alt="Project 2">
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </section>
+        <hr class="section-divider">
+
+
+    </main>
+
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="about-placeholder.jpg" alt="Brendan MacCabe">
+            <p>I am a data solutions specialist with over 20 years of experience in CRM, data visualization, and customer insights. My passion is leveraging data to drive business success and innovation.</p>
+        </div>
+    </section>
+    <hr class="section-divider">
+
+    <section id="cv" class="section2">
+        <div class="project-heading">
+        </div>
+        <div class="project-content">
+            <div class="project-text">
+                <p>
+                    Please feel free to download a copy of my cv.
+                </p>
+                <a href="documents/Brendan MacCabe CV June 24.pdf" download>download</a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Brendan MacCabe</p>
+    </footer>
+
+
+
+<!-- 
+
+    <script src="scripts.js"></script>
+
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '6684444745de04a0d77d7bd8' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+
+
+
+
+<script type="text/javascript">
+    // Function to check if the user is on a desktop
+    function isDesktop() {
+    return !/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    }
+    
+    (function(d, t) {
+    var v = d.createElement(t),
+    s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+    window.voiceflow.chat.load({
+    verify: { projectID: '6684444745de04a0d77d7bd8' },
+    url: 'https://general-runtime.voiceflow.com',
+    versionID: 'production'
+    }).then(() => {
+    // Proactive message scheduling
+    setTimeout(function() {
+    window.voiceflow.chat.proactive.push(
+    { type: 'text', payload: { message: 'Hey there!' } }
+    );
+    }, 3000); // First message after 1 second
+    
+    // Conditional chat opening on desktop
+    if (isDesktop()) {
+    setTimeout(function() {
+    window.voiceflow.chat.open();
+    }, 7000); // Open chat only on desktop after 3 seconds
+    }
+    });
+    };
+    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
+
+-->
+
+
+</body>
+</html>
