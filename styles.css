@@ -1,13 +1,14 @@
 /* styles.css */
 
 html, body {
-    height: 100%;
+    height: 100%; /* Ensure full height for html and body */
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    color: #333;
+    color: #000000;
     background-color: #fff;
     scroll-snap-type: y mandatory; /* Enable vertical scroll snap */
 }
+
 
 header {
     background: rgba(255, 255, 255, 0.9);
@@ -41,7 +42,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #333;
+    color: #000000;
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s;
@@ -55,12 +56,13 @@ main {
     padding-top: 80px; /* Adjust based on the header height */
 }
 
+
 .section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: left; /* Center text within the content */
     padding: 60px 20px;
     height: 95vh; /* Ensure each section takes up full viewport height */
     box-sizing: border-box;
@@ -70,20 +72,29 @@ main {
     animation-delay: 0.5s; /* Delay to start the animation */
 }
 
+/* Add this for testing */
+.section * {
+    margin: 0;
+    padding: 0.5;
+}
+
+
 .section2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the content */
     padding: 60px 20px;
     height: 15vh; /* Ensure each section takes up full viewport height */
+    min-height: 15vh; /* Ensure minimum height is also 15vh */
     box-sizing: border-box;
     scroll-snap-align: start; /* Snap sections to start of viewport */
     opacity: 0; /* Initially hide the section */
     animation: fadeIn 2s forwards; /* Apply fade-in animation */
     animation-delay: 0.5s; /* Delay to start the animation */
 }
+
 
 @keyframes fadeIn {
     from {
@@ -121,7 +132,7 @@ main {
 }
 
 .hero-text {
-    color: #333;
+    color: #000000;
 }
 
 .hero-text h2 {
@@ -133,6 +144,7 @@ main {
     font-size: 2em;
     margin: 0;
 }
+
 
 .section-divider {
     border: none;
@@ -170,6 +182,11 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px; /* Adjust width as needed */
+    height: 350px; /* Adjust height as needed */
 }
 
 .portfolio-item:hover {
@@ -179,7 +196,8 @@ main {
 
 .portfolio-item img {
     max-width: 100%;
-    border-radius: 10px;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the image fits within the box */
 }
 
 form {
@@ -306,7 +324,7 @@ hr.section-divider {
     }
 
     .hero-text h2 {
-        font-size: 2.5em;
+        font-size: 3em;
     }
 
     .hero-text h3 {
@@ -330,4 +348,100 @@ hr.section-divider {
     .project-image {
         max-width: 100%;
     }
+}
+
+
+.bullet-points {
+    display: flex;
+    gap: 20px;
+}
+
+.bullet-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Ensure all cards take equal space */
+    width: 300px;
+    height: 350px;
+    align-items: top;
+    align-content: top;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.bullet-card2 {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Ensure all cards take equal space */
+    width: 400px;
+    height: 350px;
+    align-items: top;
+    align-content: top;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+
+.bullet-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1em;
+    color: #000000;
+}
+
+h4 {
+    font-size: 1.4em;
+    color: #000000;
+    font-weight: 400;
+}
+
+h5 {
+    font-size: 3em;
+    color: #000000;
+}
+
+h6 {
+    font-size: 0.9em;
+    color: #000000;
+    font-weight: 100;
+}
+
+h7 {
+    font-size: 3em;
+    color: #000000;
+    font-weight: bold;
+}
+
+
+p {
+    font-size: 0.8em;
+    color: #000000;
+}
+
+
+
+.bullet-cardh {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Ensure all cards take equal space */
+    width: 800px;
+    min-height: 400px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
 }
