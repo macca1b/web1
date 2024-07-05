@@ -9,6 +9,68 @@ html, body {
     scroll-snap-type: y mandatory;
 }
 
+
+
+
+/* Base styles */
+header {
+    position: relative;
+    width: 100%;
+    background: #fff; /* or any background color you prefer */
+    z-index: 1000; /* Ensures the header is on top */
+}
+
+/* Navigation Menu */
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* Adjust header for mobile */
+    header {
+        position: fixed; /* Keeps the header at the top */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; /* Ensures the header is on top */
+    }
+
+    /* Stack navigation items vertically */
+    nav ul {
+        flex-direction: column;
+        background: #fff;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    /* Add margin-top to body to prevent content from being overlapped */
+    body {
+        margin-top: 60px; /* Adjust based on your header height */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 header {
     background: rgba(255, 255, 255, 0.9);
     position: fixed;
