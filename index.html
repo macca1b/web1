@@ -6,10 +6,6 @@
     <title>brendan maccabe | Data & CDP Specialist</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    ul {
-        list-style-type: disc; /* Default bullet points */
-        padding-left: 50px;
-    }
     <script src="https://kit.fontawesome.com/aa20d016b8.js" crossorigin="anonymous"></script>
     <style>
         .half-line-break {
@@ -17,10 +13,37 @@
             padding-bottom: 0.5em;
         }
     </style>
+
 </head>
+
+<!-- Add a button for toggling the menu -->
+<button id="menu-toggle">Menu</button>
+
+<!-- Adjust CSS to hide/show menu -->
+<style>
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu by default */
+    }
+
+    nav ul.show {
+        display: flex; /* Show menu when toggle button is clicked */
+        flex-direction: column;
+    }
+}
+</style>
+
+<!-- JavaScript for toggling the menu -->
+<script>
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    const navUl = document.querySelector('nav ul');
+    navUl.classList.toggle('show');
+});
+</script>
 
 
 <body>
+
     <header>
         <div class="navbar">
             <h1>brendan maccabe</h1>
@@ -303,6 +326,7 @@
     s.parentNode.insertBefore(v, s);
     })(document, 'script');
     </script>
+
 
 
 </body>
