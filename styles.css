@@ -465,3 +465,87 @@ p {
         font-size: 1.5em;
     }
 }
+
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        background-color: #fff;
+        transition: all 0.3s;
+    }
+    .nav.active {
+        left: 0;
+    }
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
