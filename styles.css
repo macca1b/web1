@@ -1,523 +1,309 @@
-/* styles.css */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>brendan maccabe | Data & CDP Specialist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aa20d016b8.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    background-color: #fff;
-    scroll-snap-type: y mandatory;
-}
+
+    <style>
+        .half-line-break {
+            display: block;
+            padding-bottom: 0.5em;
+        }
+    </style>
+</head>
 
 
-/* Base styles */
-header {
-    position: relative;
-    width: 100%;
-    background: #fff; /* or any background color you prefer */
-    z-index: 1000; /* Ensures the header is on top */
-}
+<body>
 
-/* Navigation Menu */
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    <header>
+        <div class="navbar">
+            <h1>brendan maccabe</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#tech">tech</a></li>
+                    <li><a href="#marketing">marketing</a></li>
+                    <li><a href="#value">value</a></li>
+                    <li><a href="#ambition">ambition</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
 
-nav ul li {
-    padding: 2px;
-}
+    <main>
+        <section id="home" class="section hero">
+           
+            <div class="portfolio-grid">
+              
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>hello!</h1>
+                        <h7>i'm Brendan</h7>
+                        <h3>CDP data solutions specialist</h3>
+                        <span class="half-line-break"></span>
+                        <h4><i class="fa-solid fa-location-dot" style="color: #669c35;"></i> Brighton, UK</h4><br>
+                        <!-- <h6>Please explore below to view my portfolio</h6>-->
+                        
+                    </div>
+                </div> 
+            
+                <div class="portfolio-item">
+                    <img src="p2.png" alt="Project 2">
+                </div>
+                
+            </div>
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-    /* Adjust header for mobile */
-    header {
-        position: fixed; /* Keeps the header at the top */
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000; /* Ensures the header is on top */
+            </section>
+
+        <hr class="section-divider">
+       
+        <section id="tech" class="section">
+            <h5>Tech</h5><br>
+            <div class="portfolio-grid">
+
+                <div class="bullet-points">
+
+                    <div class="portfolio-item">
+                    <img src="p1.png" alt="Project 2">
+                    </div>
+                    
+                    <div class="bullet-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-bolt" style="color: #669c35;"></i>
+                        </div> <!-- Data visualization icon -->
+                        <h3>CDP technology</h3><br>
+                        <p>Powering transformative campaign solutions with cutting-edge customer data platforms for data integration and actionable insights</p>
+                    </div>
+                    <div class="bullet-card">
+                        <div class="icon">
+                           <i class="fa-solid fa-palette" style="color: #669c35;"></i>
+                        </div> <!-- Light bulb icon -->
+                        <h3>Data Viz</h3><br>
+                        <p>Unleashing the full potential of data with advanced visualization tools to create compelling and informative story telling visuals.</p>
+                    </div>
+                    <div class="bullet-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-robot" style="color: #669c35;"></i>
+                        </div> <!-- Lightning bolt icon -->
+                        <h3>AI Tools and Evolution</h3><br>
+                        <p>Driving innovation with cutting-edge AI tools, continuously evolving to enhance business intelligence. Citizen data science for appication of cutting edge models and prediction</p>
+                    </div>
+                
+                </div>
+                    
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </section>
+        <hr class="section-divider">
+
+
+
+        <section id="marketing" class="section">
+            <h5>Marketing</h5><br>
+            <div class="portfolio-grid">
+                
+                <div class="bullet-points">
+
+                    <div class="bullet-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelopes-bulk" style="color: #669c35;"></i>
+                        </div> <!-- Data visualization icon -->
+                        <h3>CRM & Contact Strategy</h3><br>
+                        <p>Boosting customer engagement and retention through strategic, data-driven CRM initiatives. Leveraged advanced analytics to develop and execute contact strategies, enhancing customer interactions and maximizing the efficiency of communication channels</p>
+                    </div>
+                    <div class="bullet-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-chart-line" style="color: #669c35;"></i>
+                            </div> <!-- Light bulb icon -->
+                        <h3>Customer Segmentation & Insights</h3><br>
+                        <p>Converting deep consumer insights into actionable strategies that drive growth and customer loyalty. Precise segmentation and targeting for high quality data selection</p>
+                    </div>
+                    <div class="bullet-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-share-nodes" style="color: #669c35;"></i>    
+                        </div> <!-- Lightning bolt icon -->
+                        <h3>Data Driven Collaboration</h3><br>
+                        <p>Driving marketing success by delivering CDP solutions to marketers, making data easy through collaborative sharing, integration and adoption</p>
+                    </div>
+               
+                    <div class="portfolio-item">
+                        <img src="p2.png" alt="Project 2">
+                    </div>
+              
+                </div>
+                <!-- Add more portfolio items as needed -->
+
+                
+            </div>
+            
+        </section>
+        <hr class="section-divider">
+
+
+
+        <section id="value" class="section">
+            <h5>Delivery</h5><br>
+            <div class="portfolio-grid">
+
+                <div class="bullet-points">
+
+                    <div class="portfolio-item">
+                        <img src="p2.png" alt="Project 2">
+                    </div>
+    
+                    <div class="bullet-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-code" style="color: #669c35;"></i>
+                        </div> <!-- Data visualization icon -->
+                        <h3>Hands-On Technical Leader</h3><br>
+                        <p>Actively delivering technical expertise in the design and execution of data-driven campaign solutions, contributing to the development and implementation of cutting-edge CRM data strategies</p>
+                    </div>
+                    <div class="bullet-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-lightbulb" style="color: #669c35;"></i>
+                            </div> <!-- Light bulb icon -->
+                        <h3>Data-Driven Strategist</h3><br>
+                        <p>Spearheaded the implementation of over 30 advanced data solutions, managing 60 million communications across 2023 and significantly enhancing customer engagement through strategic analytics and data insights</p></div>
+                    <div class="bullet-card">
+                        <div class="icon">
+                            <i class="fa-solid fa-people-group" style="color: #669c35;"></i>    
+                        </div> <!-- Lightning bolt icon -->
+                        <h3>Data</h3>
+                        <h3>Leadership</h3><br>
+                        
+                        <p>Led diverse teams of data, reporting, and insight analysts across the UK and India to deliver impactful marketing solutions, driving CRM initiatives that improved customer retention and increased annual sales revenue</p>
+                    </div>
+
+
+                   
+                </div>
+
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </section>
+        <hr class="section-divider">
+
+
+
+   </main>
+
+
+    <section id="ambition" class="section">
+        <h5>Ambition</h5><br>
+        <div class="portfolio-grid">
+        
+            <div class="bullet-points">
+                <div class="bullet-card2">
+                <div class="icon">
+                    <i class="fa-solid fa-wand-magic-sparkles" style="color: #669c35;"></i>
+                </div> <!-- Data visualization icon -->
+                <h3>Delivery & Impact</h3><br>
+                <p>Actively delivering technical expertise in the design and execution of data-driven campaign solutions, contributing to the development and implementation of cutting-edge CRM data strategies</p>
+            </div>
+            <div class="bullet-card2">
+                <div class="icon">
+                    <i class="fa-solid fa-person-chalkboard" style="color: #669c35;"></i>
+                </div> <!-- Light bulb icon -->
+                <h3>Knowledge Share & Learn</h3><br>
+                <p>Spearheaded the implementation of over 30 advanced data solutions, managing 60 million communications across 2023 and significantly enhancing customer engagement through strategic analytics and data insights</p></div>
+            <div class="bullet-card2">
+                <div class="icon">
+                    <i class="fa-solid fa-road" style="color: #669c35;"></i>    
+                </div> <!-- Lightning bolt icon -->
+                <h3>Development Roadmap</h3><br>
+                <p>Led diverse teams of data, reporting, and insight analysts across the UK and India to deliver impactful marketing solutions, driving CRM initiatives that improved customer retention and increased annual sales revenue</p>
+            </div>
+       </div>
+
+
+
+
+    </section>
+    <hr class="section-divider">
+
+    <section id="cv" class="section2">
+        <div class="project-heading">
+        </div>
+        <div class="project-content">
+            <div class="project-text">
+                <p>
+                    Please feel free to download a copy of my cv.
+                </p>
+                <a href="documents/Brendan MacCabe CV June 24.pdf" download>download</a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 Brendan MacCabe</p>
+    </footer>
+
+
+
+    <script src="scripts.js"></script>
+
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '6684444745de04a0d77d7bd8' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+
+
+
+
+<script type="text/javascript">
+    // Function to check if the user is on a desktop
+    function isDesktop() {
+    return !/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
     }
-
-    /* Stack navigation items vertically */
-    nav ul {
-        flex-direction: column;
-        background: #fff;
+    
+    (function(d, t) {
+    var v = d.createElement(t),
+    s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+    window.voiceflow.chat.load({
+    verify: { projectID: '6684444745de04a0d77d7bd8' },
+    url: 'https://general-runtime.voiceflow.com',
+    versionID: 'production'
+    }).then(() => {
+    // Proactive message scheduling
+    setTimeout(function() {
+    window.voiceflow.chat.proactive.push(
+    { type: 'text', payload: { message: 'Hey there!' } }
+    );
+    }, 3000); // First message after 1 second
+    
+    // Conditional chat opening on desktop
+    if (isDesktop()) {
+    setTimeout(function() {
+    window.voiceflow.chat.open();
+    }, 7000); // Open chat only on desktop after 3 seconds
     }
+    });
+    };
+    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
 
-    nav ul li {
-        text-align: center;
-        padding: 10px 0;
-    }
 
-    /* Add margin-top to body to prevent content from being overlapped */
-    body {
-        margin-top: 60px; /* Adjust based on your header height */
-    }
-}
 
-
-
-
-
-
-
-
-
-
-
-header {
-    background: rgba(255, 255, 255, 0.9);
-    position: fixed;
-    width: 100%;
-    padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #4CAF50;
-}
-
-main {
-    padding-top: 80px;
-}
-
-.section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    padding: 60px 20px;
-    height: 95vh;
-    box-sizing: border-box;
-    scroll-snap-align: start;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    animation-delay: 0.5s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(0px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    padding: 20px;
-    background: #fff;
-    flex-wrap: wrap;
-}
-
-.hero-content {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.hero-image {
-    max-width: 300px;
-    border-radius: 50%;
-    margin-left: 20px;
-}
-
-.hero-text {
-    color: #000000;
-}
-
-.hero-text h2 {
-    font-size: 4em;
-    margin: 0;
-}
-
-.hero-text h3 {
-    font-size: 2em;
-    margin: 0;
-}
-
-.section-divider {
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 0;
-    width: 100%;
-}
-
-.about-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-}
-
-.about-content img {
-    max-width: 300px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    width: 100%;
-}
-
-.portfolio-item {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 350px;
-}
-
-.portfolio-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.portfolio-item img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-input[type="submit"] {
-    background: #4CAF50;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
-    transition: background 0.3s;
-}
-
-input[type="submit"]:hover {
-    background: #0ba713;
-}
-
-footer {
-    background: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-    flex-shrink: 0;
-    width: 100%;
-}
-
-h1, h2, h3, p {
-    margin: 10px 0;
-}
-
-hr.section-divider {
-    border: 0;
-    border-top: 3px solid #71e230;
-    margin: 0;
-    width: 98%;
-    margin-left: 20px;
-}
-
-.bullet-point {
-    width: 22px;
-    height: 22px;
-    background-color: #4CAF50;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 200px;
-}
-
-.project-heading {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.project-heading h1 {
-    margin: 0;
-    font-size: 2em;
-    margin-left: 20px;
-}
-
-.project-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-    margin-left: 20px;
-    flex-wrap: wrap;
-}
-
-.project-text {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.project-text p {
-    margin: 0 0 10px;
-    font-size: 1.1em;
-}
-
-.project-link {
-    color: #4CAF50;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-}
-
-.project-image {
-    flex: 1;
-    max-width: 600px;
-}
-
-.project-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.bullet-points {
-    display: flex;
-    gap: 20px;
-}
-
-.bullet-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    flex: 1;
-    width: 300px;
-    height: 350px;
-    align-items: top;
-    align-content: top;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.bullet-card2 {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    flex: 1;
-    width: 400px;
-    height: 350px;
-    align-items: top;
-    align-content: top;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.bullet-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.icon {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-h3 {
-    font-size: 1em;
-    color: #000000;
-}
-
-h4 {
-    font-size: 1.4em;
-    color: #000000;
-    font-weight: 400;
-}
-
-h5 {
-    font-size: 3em;
-    color: #000000;
-}
-
-h6 {
-    font-size: 0.9em;
-    color: #000000;
-    font-weight: 100;
-}
-
-h7 {
-    font-size: 3em;
-    color: #000000;
-    font-weight: bold;
-}
-
-p {
-    font-size: 0.8em;
-    color: #000000;
-}
-
-.bullet-cardh {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    flex: 1;
-}
-
-
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    .hero-text h2 {
-        font-size: 2.5rem;
-    }
-
-    .hero-text h3 {
-        font-size: 1.5rem;
-    }
-
-    .hero-text h4 {
-        font-size: 1.2rem;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .bullet-points {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .portfolio-item, .bullet-card, .bullet-card2 {
-        width: 100%;
-        height: auto;
-        margin-bottom: 1rem;
-    }
-
-    .section {
-        height: auto;
-        min-height: 100vh;
-    }
-
-    .project-content {
-        width: 90%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-text {
-        margin-right: 0;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar h1 {
-        font-size: 1.2rem;
-    }
-
-    .hero-text h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero-text h3, .hero-text h4 {
-        font-size: 1rem;
-    }
-
-    .bullet-card h3, .bullet-card2 h3 {
-        font-size: 1rem;
-    }
-
-    .bullet-card p, .bullet-card2 p {
-        font-size: 0.9rem;
-    }
-
-    .project-heading h1 {
-        font-size: 1.5em;
-    }
-}
+</body>
+</html>
