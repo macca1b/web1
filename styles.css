@@ -317,40 +317,6 @@ hr.section-divider {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
-
-    .hero-text h2 {
-        font-size: 3em;
-    }
-
-    .hero-text h3 {
-        font-size: 1.5em;
-    }
-
-    .project-heading h1 {
-        font-size: 1.5em;
-    }
-
-    .project-text {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    .project-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-image {
-        max-width: 100%;
-    }
-}
-
-
 .bullet-points {
     display: flex;
     gap: 20px;
