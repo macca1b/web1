@@ -1,14 +1,13 @@
 /* styles.css */
 
 html, body {
-    height: 100%; /* Ensure full height for html and body */
+    height: 100%;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     color: #000000;
     background-color: #fff;
-    scroll-snap-type: y mandatory; /* Enable vertical scroll snap */
+    scroll-snap-type: y mandatory;
 }
-
 
 header {
     background: rgba(255, 255, 255, 0.9);
@@ -26,7 +25,7 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    flex-wrap: wrap; /* Allow wrapping */
+    flex-wrap: wrap;
 }
 
 nav ul {
@@ -34,7 +33,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -53,53 +52,28 @@ nav ul li a:hover {
 }
 
 main {
-    padding-top: 80px; /* Adjust based on the header height */
+    padding-top: 80px;
 }
-
 
 .section {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: left; /* Center text within the content */
+    justify-content: center;
+    align-items: center;
+    text-align: left;
     padding: 60px 20px;
-    height: 95vh; /* Ensure each section takes up full viewport height */
+    height: 95vh;
     box-sizing: border-box;
-    scroll-snap-align: start; /* Snap sections to start of viewport */
-    opacity: 0; /* Initially hide the section */
-    animation: fadeIn 2s forwards; /* Apply fade-in animation */
-    animation-delay: 0.5s; /* Delay to start the animation */
+    scroll-snap-align: start;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 0.5s;
 }
-
-/* Add this for testing */
-.section * {
-    margin: 0;
-    padding: 0.5;
-}
-
-
-.section2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text within the content */
-    padding: 60px 20px;
-    height: 15vh; /* Ensure each section takes up full viewport height */
-    min-height: 15vh; /* Ensure minimum height is also 15vh */
-    box-sizing: border-box;
-    scroll-snap-align: start; /* Snap sections to start of viewport */
-    opacity: 0; /* Initially hide the section */
-    animation: fadeIn 2s forwards; /* Apply fade-in animation */
-    animation-delay: 0.5s; /* Delay to start the animation */
-}
-
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(0px); /* Adjust for slide-in effect */
+        transform: translateY(0px);
     }
     to {
         opacity: 1;
@@ -114,7 +88,7 @@ main {
     text-align: left;
     padding: 20px;
     background: #fff;
-    flex-wrap: wrap; /* Allow wrapping */
+    flex-wrap: wrap;
 }
 
 .hero-content {
@@ -122,7 +96,7 @@ main {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap; /* Allow wrapping */
+    flex-wrap: wrap;
 }
 
 .hero-image {
@@ -144,7 +118,6 @@ main {
     font-size: 2em;
     margin: 0;
 }
-
 
 .section-divider {
     border: none;
@@ -185,8 +158,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px; /* Adjust width as needed */
-    height: 350px; /* Adjust height as needed */
+    width: 400px;
+    height: 350px;
 }
 
 .portfolio-item:hover {
@@ -197,7 +170,7 @@ main {
 .portfolio-item img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Ensures the image fits within the box */
+    object-fit: contain;
 }
 
 form {
@@ -259,7 +232,7 @@ hr.section-divider {
 .bullet-point {
     width: 22px;
     height: 22px;
-    background-color: #4CAF50; /* Green color for the bullet point */
+    background-color: #4CAF50;
     border-radius: 50%;
     display: inline-block;
     margin-left: 200px;
@@ -283,7 +256,7 @@ hr.section-divider {
     justify-content: space-between;
     width: 70%;
     margin-left: 20px;
-    flex-wrap: wrap; /* Allow wrapping */
+    flex-wrap: wrap;
 }
 
 .project-text {
@@ -328,7 +301,7 @@ hr.section-divider {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    flex: 1; /* Ensure all cards take equal space */
+    flex: 1;
     width: 300px;
     height: 350px;
     align-items: top;
@@ -342,7 +315,7 @@ hr.section-divider {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    flex: 1; /* Ensure all cards take equal space */
+    flex: 1;
     width: 400px;
     height: 350px;
     align-items: top;
@@ -350,16 +323,13 @@ hr.section-divider {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-
-
 .bullet-card:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .icon {
-    font-size: 2em;
+    font-size: 3em;
     margin-bottom: 10px;
 }
 
@@ -391,13 +361,10 @@ h7 {
     font-weight: bold;
 }
 
-
 p {
     font-size: 0.8em;
     color: #000000;
 }
-
-
 
 .bullet-cardh {
     background-color: #fff;
@@ -405,21 +372,12 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
-    flex: 1; /* Ensure all cards take equal space */
-    width: 800px;
-    min-height: 400px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    
+    flex: 1;
 }
 
 
-
-/* Add this at the end of your existing CSS file */
-
-/* ... (keeping existing styles) ... */
-
 /* Media Queries for Mobile Responsiveness */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: center;
@@ -434,20 +392,16 @@ p {
         margin: 0.5rem 0;
     }
 
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text h7 {
-        font-size: 2rem;
+    .hero-text h2 {
+        font-size: 2.5rem;
     }
 
     .hero-text h3 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .hero-text h4 {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .portfolio-grid {
@@ -456,6 +410,7 @@ p {
 
     .bullet-points {
         flex-direction: column;
+        align-items: center;
     }
 
     .portfolio-item, .bullet-card, .bullet-card2 {
@@ -469,12 +424,15 @@ p {
         min-height: 100vh;
     }
 
-    h5 {
-        font-size: 2rem;
-    }
-
     .project-content {
         width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-text {
+        margin-right: 0;
+        text-align: center;
     }
 }
 
@@ -483,11 +441,7 @@ p {
         font-size: 1.2rem;
     }
 
-    .hero-text h1 {
-        font-size: 1.5rem;
-    }
-
-    .hero-text h7 {
+    .hero-text h2 {
         font-size: 1.5rem;
     }
 
@@ -496,10 +450,14 @@ p {
     }
 
     .bullet-card h3, .bullet-card2 h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .bullet-card p, .bullet-card2 p {
         font-size: 0.9rem;
+    }
+
+    .project-heading h1 {
+        font-size: 1.5em;
     }
 }
