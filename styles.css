@@ -15,6 +15,7 @@ header {
     width: 100%;
     padding: 10px 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(25, 104, 7, 0.1);
 }
 
 .navbar {
