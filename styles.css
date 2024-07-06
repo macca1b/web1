@@ -14,7 +14,6 @@ header {
     position: fixed;
     width: 100%;
     padding: 10px 0;
-    box-shadow: 0 4px 6px rgba(25, 104, 7, 0.1);
     z-index: 1000;
 }
 
