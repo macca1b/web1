@@ -15,7 +15,7 @@ header {
     width: 100%;
     padding: 10px 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(25, 104, 7, 0.1);
+    box-shadow: 0 4px 6px rgba(81, 94, 78, 0.1);
 }
 
 .navbar {
@@ -62,7 +62,7 @@ main {
     align-items: center;
     text-align: left;
     padding: 60px 20px;
-    height: 95vh;
+    height: 90vh;
     box-sizing: border-box;
     scroll-snap-align: start;
     opacity: 0;
@@ -77,13 +77,14 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 60px 20px;
+    padding: 40px 20px;
     height: 3vh;
     box-sizing: border-box;
     scroll-snap-align: start;
     opacity: 0;
     animation: fadeIn 2s forwards;
     animation-delay: 0.5s;
+    font-size: small;
 }
 
 
