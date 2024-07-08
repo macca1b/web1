@@ -372,7 +372,7 @@ h5 {
     color: #000000;
     margin-bottom: 0    px; /* Adjust as necessary */
     margin-top: 10px;
-    margin-bottom: 10px; /* Adjust this value as needed */
+    margin-bottom: 0px; /* Adjust this value as needed */
     padding-bottom: 0;   /* Ensure padding is not adding extra space */
 }
 
