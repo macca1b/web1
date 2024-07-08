@@ -78,13 +78,14 @@ main {
     align-items: center;
     text-align: center;
     padding: 40px 20px;
-    height: 3vh;
+    height: 2vh;
     box-sizing: border-box;
     scroll-snap-align: start;
     opacity: 0;
     animation: fadeIn 2s forwards;
     animation-delay: 0.5s;
     font-size: small;
+    margin-top: 20px;
 }
 
 
@@ -228,8 +229,8 @@ input[type="submit"]:hover {
 }
 
 footer {
-    background: #f4f4f4;
-    padding: 20px;
+    background: #ffffff;
+    padding: 10px;
     text-align: center;
     flex-shrink: 0;
     width: 100%;
@@ -371,6 +372,8 @@ h5 {
     color: #000000;
     margin-bottom: 0    px; /* Adjust as necessary */
     margin-top: 10px;
+    margin-bottom: 30px; /* Adjust this value as needed */
+    padding-bottom: 0;   /* Ensure padding is not adding extra space */
 }
 
 h6 {
@@ -404,7 +407,16 @@ p {
 }
 
 
+.menu-icon i {
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+
+
+
 /* Media Queries for Mobile Responsiveness */
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -462,7 +474,19 @@ p {
         margin-right: 0;
         text-align: center;
     }
-}
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-icon {
+        display: block;
+        }
+    }
 
 @media (max-width: 480px) {
     .navbar h1 {
@@ -487,6 +511,18 @@ p {
 
     .project-heading h1 {
         font-size: 1.5em;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-icon {
+        display: block;
     }
 }
 
