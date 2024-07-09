@@ -15,8 +15,10 @@ header {
     width: 100%;
     padding: 10px 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(81, 94, 78, 0.1);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    opacity: 100;
 }
+
 
 .navbar {
     display: flex;
@@ -28,6 +30,15 @@ header {
     flex-wrap: wrap;
 }
 
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: right;
+}
+
+
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -36,15 +47,12 @@ nav ul {
     flex-wrap: wrap;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
 nav ul li a {
     color: #000000;
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s;
+    margin: 0 15px;
 }
 
 nav ul li a:hover {
@@ -329,25 +337,55 @@ hr.section-divider {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+
+
+
 .bullet-points {
     display: flex;
     gap: 20px;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .bullet-card {
-        background-color: #fff;
-        border-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-        flex: 1;
-        width: 300px;
-        height: 350px;
-        align-items: top;
-        align-content: top;
-        transition: transform 0.3s, box-shadow 0.3s;
-        margin: 0; /* Ensure no extra margin */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    width: 300px; /* Set a fixed width */
+    height: 350px; /* Set a fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden; /* Prevent content from overflowing */
 }
+
+.bullet-card .icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.bullet-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    color: #000000;
+}
+
+.bullet-card p {
+    font-size: 0.8em;
+    color: #000000;
+    margin: 0;
+    /* Enable text wrapping */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+
 
 .bullet-card2 {
     background-color: #fff;
@@ -431,15 +469,11 @@ p {
 .menu-icon {
     display: none;
     cursor: pointer;
-}
-
-.menu-icon i {
     font-size: 24px;
-    right: 20px;
 }
 
 
-/* Media Queries for Mobile Responsiveness */
+
 
 @media (min-width: 768px) and (max-width: 1200px) {
     .portfolio-grid {
@@ -464,6 +498,7 @@ p {
 }
 
 @media (max-width: 768px) {
+
     .navbar {
         flex-direction: column;
         align-items: center;
@@ -558,10 +593,6 @@ p {
     }
 
 
-
-    .nav-links.active {
-        display: flex;
-    }
  
     h6 {
         font-size: 2em;
@@ -600,12 +631,34 @@ p {
         object-fit: contain;
     }
 
-}
+    h5 {
+            font-size: 2em; /* Adjust the size as needed */
+        }
+    }
 
 @media (max-width: 480px) {
-    .navbar h1 {
-        font-size: 1.2rem;
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex-wrap: wrap;
     }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: right;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+
 
     .hero-text h2 {
         font-size: 1.5rem;
@@ -628,17 +681,7 @@ p {
         font-size: 1.5em;
     }
 
-    .nav-links {
-        display: none; /* Hide the navigation links by default */
-        flex-direction: column;
-        width: 100%;
-        text-align: right;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
+    
     h6 {
         font-size: 2.7em;
         color: #000000;
@@ -678,5 +721,12 @@ p {
         max-height: 100%;
         object-fit: contain;
     }
+
+    h5 {
+        font-size: 2em; /* Adjust the size as needed */
+    }
 }
+
+
+
 
