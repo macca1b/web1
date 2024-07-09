@@ -559,7 +559,7 @@ p {
         align-content: center;
         margin: 0 auto;
         margin-top: 0pc;
-    }
+     }
 
    
     .bullet-card, .bullet-card2 {
@@ -633,6 +633,8 @@ p {
 
     h5 {
             font-size: 2em; /* Adjust the size as needed */
+            padding-top: 30px;
+            padding-bottom: 0;
         }
     }
 
