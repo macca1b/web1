@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/aa20d016b8.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 <header>
     <div class="navbar">
         <h1>Brendan MacCabe</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars" style="color: #000000;"></i>
+        </div>
         <nav>
             <ul id="nav-links" class="nav-links">
-                <div class="menu-icon" onclick="toggleMenu()">
-                    <i class="fa-solid fa-bars" style="color: #000000;"></i>
-                </div>
                 <li><a href="#home">home</a></li>
                 <li><a href="#tech">tech</a></li>
                 <li><a href="#marketing">marketing</a></li>
                 <li><a href="#value">impact</a></li>
                 <li><a href="#ambition">ambition</a></li>
-                <li><a href="documents/Brendan MacCabe CV June 24.pdf" download><a href="#cv">cv</a></li>
+                <li><a href="documents/Brendan MacCabe CV June 24.pdf" download>cv</a></li>
             </ul>
         </nav>
     </div>
@@ -33,7 +33,7 @@
 
 <main>
     <section id="home" class="section hero">
-        <div class="portfolio-grid">
+        <div class="portfolio-gridh">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Hello!</h1>
@@ -42,7 +42,7 @@
                     <h4><i class="fa-solid fa-location-dot" style="color: #669c35;"></i> Brighton, UK</h4><br>
                 </div>
             </div> 
-            <div class="portfolio-item">
+            <div class="portfolio-itemh">
                 <img src="p19.jpg" alt="Project 2">
             </div>
         </div>
@@ -89,6 +89,9 @@
         <h5>Marketing</h5>
         <div class="portfolio-grid">
             <div class="bullet-points">
+                <div class="portfolio-item">
+                    <img src="p15.jpg" alt="Project 2">
+                </div>
                 <div class="bullet-card">
                     <div class="icon">
                         <i class="fa-solid fa-envelopes-bulk" style="color: #669c35;"></i>
@@ -109,9 +112,6 @@
                     </div>
                     <h3>CDP Adoption</h3>
                     <p>Driving marketing success by delivering CDP solutions to marketers, making data accessible through collaborative sharing, seamless integration, and widespread adoption. Facilitating cross-functional teamwork to ensure data-driven strategies are effectively implemented and embraced</p>
-                </div>
-                <div class="portfolio-item">
-                    <img src="p15.jpg" alt="Project 2">
                 </div>
             </div>
         </div>
@@ -155,6 +155,9 @@
         <h5>Ambition</h5>
         <div class="portfolio-grid">
             <div class="bullet-points">
+                <div class="portfolio-item">
+                    <img src="p7.jpg" alt="Project 2">
+                </div>
                 <div class="bullet-card">
                     <div class="icon">
                         <i class="fa-solid fa-medal" style="color: #669c35;"></i>
@@ -176,9 +179,6 @@
                     <h3>Share & Learn</h3>
                     <p>Recognition for a fast-changing martech landscape of tools and methods, committed to continuous learning and sharing to realise a step change in productivity and performance</p>
                 </div>
-                <div class="portfolio-item">
-                    <img src="p7.jpg" alt="Project 2">
-                </div>
                 </div>
         </div>
     </section>
@@ -191,11 +191,13 @@
                 <p><i>July 2024</i></p>
             </div>
         </div>
+
     </section>
 
 
 
 
+    <!-- 
 
     <script type="text/javascript">
         (function(d, t) {
@@ -210,6 +212,7 @@
             v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
         })(document, 'script');
       </script>
+
 
 
     <script type="text/javascript">
@@ -247,15 +250,20 @@
         s.parentNode.insertBefore(v, s);
         })(document, 'script');
         </script>
-    
-    
+
+    -->
 
 
-
-
-
-</body>
     <footer>
 
+        <script>
+            function toggleMenu() {
+                const navLinks = document.getElementById('nav-links');
+                navLinks.classList.toggle('active');
+            }
+        </script>
+    </footer>
 
+</body>
+</html>
 
