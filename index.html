@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Brendan MacCabe | Data & CDP Specialist</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
             <i class="fa-solid fa-bars" style="color: #000000;"></i>
         </div>
         <nav>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">home</a></li>
                 <li><a href="#tech">tech</a></li>
                 <li><a href="#marketing">marketing</a></li>
@@ -29,7 +29,6 @@
         </nav>
     </div>
 </header>
-
 
 <main>
     <section id="home" class="section hero">
@@ -82,7 +81,6 @@
         </div>
     </section>
 
-
     <hr class="section-divider">
 
     <section id="marketing" class="section">
@@ -116,6 +114,7 @@
             </div>
         </div>
     </section>
+
     <hr class="section-divider">
 
     <section id="value" class="section">
@@ -149,6 +148,7 @@
             </div>
         </div>
     </section>
+
     <hr class="section-divider">
 
     <section id="ambition" class="section">
@@ -179,85 +179,81 @@
                     <h3>Share & Learn</h3>
                     <p>Recognition for a fast-changing martech landscape of tools and methods, committed to continuous learning and sharing to realise a step change in productivity and performance</p>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
+
     <hr class="section-divider">
 
     <section id="cv" class="section2">
         <div class="project-content">
             <div class="project-text">
-                <p>Please feel free to take a copy of <b><a href="documents/Brendan MacCabe CV June 24.pdf" download> CV</a></b> </p>
+                <p>Please feel free to take a copy of <b><a href="documents/Brendan MacCabe CV June 24.pdf" download>CV</a></b></p>
                 <p><i>July 2024</i></p>
             </div>
         </div>
-
     </section>
+</main>
 
+<footer>
+    <!-- Your footer content here if any -->
+</footer>
 
-    <script type="text/javascript">
-        (function(d, t) {
-            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            v.onload = function() {
-              window.voiceflow.chat.load({
+<script>
+(function() {
+    function scrollToTop() {
+        if (window.pageYOffset !== 0) {
+            window.scrollTo(0, 0);
+        }
+    }
+
+    function isDesktop() {
+        return !/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    }
+
+    function toggleMenu() {
+        const navLinks = document.getElementById('nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+    // Scroll to top
+    window.addEventListener('load', scrollToTop, false);
+    document.addEventListener('DOMContentLoaded', scrollToTop, false);
+    setTimeout(scrollToTop, 100);
+
+    // Voiceflow chat implementation
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+            window.voiceflow.chat.load({
                 verify: { projectID: '6684444745de04a0d77d7bd8' },
                 url: 'https://general-runtime.voiceflow.com',
                 versionID: 'production'
-              });
-            }
-            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-      </script>
-
-
-
-    <script type="text/javascript">
-        // Function to check if the user is on a desktop
-        function isDesktop() {
-        return !/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-        }
-        
-        (function(d, t) {
-        var v = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
-        window.voiceflow.chat.load({
-        verify: { projectID: '6684444745de04a0d77d7bd8' },
-        url: 'https://general-runtime.voiceflow.com',
-        versionID: 'production'
-        }).then(() => {
-        // Proactive message scheduling
-        setTimeout(function() {
-        window.voiceflow.chat.proactive.push(
-        { type: 'text', payload: { message: 'Hey there!' } }
-        );
-        }, 2500); // First message after 1 second
-        
-        // Conditional chat opening on desktop
-        if (isDesktop()) {
-        setTimeout(function() {
-        window.voiceflow.chat.open();
-        }, 4000); // Open chat only on desktop after 3 seconds
-        }
-        });
+            }).then(() => {
+                // Proactive message scheduling
+                setTimeout(function() {
+                    window.voiceflow.chat.proactive.push(
+                        { type: 'text', payload: { message: 'Hey there!' } }
+                    );
+                }, 2500);
+                
+                // Conditional chat opening on desktop
+                if (isDesktop()) {
+                    setTimeout(function() {
+                        window.voiceflow.chat.open();
+                    }, 4000);
+                }
+            });
         };
         v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
         v.type = "text/javascript";
         s.parentNode.insertBefore(v, s);
-        })(document, 'script');
-        </script>
+    })(document, 'script');
 
-   
-    <footer>
-
-        <script>
-            function toggleMenu() {
-                const navLinks = document.getElementById('nav-links');
-                navLinks.classList.toggle('active');
-            }
-        </script>
-    </footer>
+    // Expose toggleMenu to global scope if needed
+    window.toggleMenu = toggleMenu;
+})();
+</script>
 
 </body>
 </html>
-
