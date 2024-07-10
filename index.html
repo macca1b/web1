@@ -231,13 +231,13 @@
         window.voiceflow.chat.proactive.push(
         { type: 'text', payload: { message: 'Hey there!' } }
         );
-        }, 3000); // First message after 1 second
+        }, 2500); // First message after 1 second
         
         // Conditional chat opening on desktop
         if (isDesktop()) {
         setTimeout(function() {
         window.voiceflow.chat.open();
-        }, 7000); // Open chat only on desktop after 3 seconds
+        }, 4000); // Open chat only on desktop after 3 seconds
         }
         });
         };
