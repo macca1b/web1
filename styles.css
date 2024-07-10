@@ -647,6 +647,10 @@ p {
             padding-top: 30px;
             padding-bottom: 0;
         }
+    
+    h1 {
+            font-size: 1.3em; /* Adjust the size as needed */
+        }
     }
 
 @media (max-width: 480px) {
