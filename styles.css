@@ -7,7 +7,11 @@ html, body {
     color: #000000;
     background-color: #fff;
     scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 
 header {
     background: rgba(255, 255, 255, 0.9);
@@ -189,6 +193,10 @@ main {
     width: 400px;
     height: 350px;
 }
+
+
+
+
 
 .portfolio-item:hover {
     transform: scale(1.05);
@@ -477,7 +485,7 @@ p {
 
 @media (min-width: 768px) and (max-width: 1200px) {
     .portfolio-grid {
-        padding-left: 20px; /* Add padding to the left side */
+        padding-left: 20px; /* Add padding to the left side - */ 
     }
 
     .portfolio-gridh {
@@ -489,6 +497,9 @@ p {
         align-items: center;
     }
     
+
+
+
     .portfolio-itemh img {
         max-width: 100%;
         max-height: 100%;
