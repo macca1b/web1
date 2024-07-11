@@ -477,8 +477,10 @@ p {
 .menu-icon {
     display: none;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 18px;
 }
+
+
 
 
 
@@ -514,6 +516,7 @@ p {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        margin-bottom: 0px;
     }
 
     .menu-icon {
@@ -643,14 +646,16 @@ p {
     }
 
     h5 {
-            font-size: 2em; /* Adjust the size as needed */
+            font-size: 2.7em; /* Adjust the size as needed */
             padding-top: 30px;
             padding-bottom: 0;
         }
+
     
     h1 {
             font-size: 1.3em; /* Adjust the size as needed */
         }
+    
     }
 
 @media (max-width: 480px) {
@@ -742,6 +747,8 @@ p {
     h5 {
         font-size: 2em; /* Adjust the size as needed */
     }
+
+
 }
 
 

@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Menu icon not found');
     }
 
+
+  
     const navLinkElements = document.querySelectorAll('.nav-links a');
     navLinkElements.forEach(link => {
         link.addEventListener('click', function() {
@@ -24,5 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
 
 
