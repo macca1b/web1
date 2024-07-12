@@ -759,9 +759,6 @@ p {
         margin-bottom: 0px; /* Reduce the gap between h4 and the image */
     }
 
-    .section {
-        height: 60vh; /* Full viewport height for mobile */
-    }
 }
 
 
