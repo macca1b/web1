@@ -759,6 +759,10 @@ p {
         margin-bottom: 0px; /* Reduce the gap between h4 and the image */
     }
 
+    .section {
+        height: 100vh; /* Full viewport height for mobile */
+        padding: 20px; /* Adjust padding for better fit on mobile */
+    }
 }
 
 
