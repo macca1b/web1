@@ -753,6 +753,7 @@ h8 {
         max-height: 100%;
         object-fit:contain;
         align-items: center;
+        padding-bottom: 40px;
     }
 
     h5 {
