@@ -751,6 +751,7 @@ h8 {
         max-width: 80%;
         max-height: 80%;
         object-fit:contain;
+        align-items: center;
     }
 
     h5 {
