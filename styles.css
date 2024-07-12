@@ -20,7 +20,7 @@ header {
     width: 100%;
     padding: 10px 0;
     z-index: 1000;
-    box-shadow: 0 8px 8px rgba(0, 125, 12, 0.1);
+    box-shadow: 0 8px 8px rgba(25, 147, 1, 0.1);
     opacity: 100;
 }
 
@@ -61,7 +61,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #4CAF50;
+    color: #3eaa00;
 }
 
 main {
@@ -279,7 +279,7 @@ h1, h2, h3, p {
 
 hr.section-divider {
     border: 0;
-    border-top: 3px solid #71e230;
+    border-top: 3px solid #55c515;
     margin: 0;
     width: 98%;
     margin-left: 20px;
@@ -754,7 +754,6 @@ h8 {
         max-height: 100%;
         object-fit:contain;
         align-items: center;
-        padding-bottom: 40px;
     }
 
     h5 {
