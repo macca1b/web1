@@ -749,6 +749,10 @@ p {
         font-size: 2em; /* Adjust the size as needed */
     }
 
+    h7 {
+        font-size: 1.5em; /* Adjust the size as needed */
+    }
+
     body {
         scroll-snap-type: y proximity; /* Adjust scroll-snap-type */
         overflow-y: scroll;
@@ -756,7 +760,7 @@ p {
     }
 
     .hero-text h4 {
-        margin-bottom: 30px; /* Reduce the gap between h4 and the image */
+        margin-bottom: 0px; /* Reduce the gap between h4 and the image */
     }
 
 }
