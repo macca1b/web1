@@ -10,8 +10,9 @@ html, body {
     width: 100%;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; /* Adjust scroll-snap-type */
 }
-/* removed this -  scroll-snap-type: y mandatory; */
+
 
 header {
     background: rgba(255, 255, 255, 0.9);
@@ -79,6 +80,8 @@ main {
     opacity: 0;
     animation: fadeIn 2s forwards;
     animation-delay: 0.5s;
+    scroll-snap-align: start;
+    scroll-behavior:smooth
 }
 
 
