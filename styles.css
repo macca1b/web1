@@ -10,6 +10,7 @@ html, body {
     overflow-x: hidden;
     width: 100%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 
@@ -762,6 +763,21 @@ p {
     .hero-text h4 {
         margin-bottom: 0px; /* Reduce the gap between h4 and the image */
     }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        padding: 60px 20px;
+        height: 90vh;
+        box-sizing: border-box;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        animation-delay: 0.5s;
+    }
+
 
 }
 

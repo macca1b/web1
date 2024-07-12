@@ -9,6 +9,15 @@
     <script src="https://kit.fontawesome.com/aa20d016b8.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
     <script src="scroll-fade.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if the user is not already at the home section
+            if (window.location.hash !== '#home') {
+                // Redirect to the home section
+                window.location.hash = '#home';
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -89,7 +98,7 @@
         <div class="portfolio-grid">
             <div class="bullet-points">
                 <div class="portfolio-item">
-                    <img src="p23.jpg" alt="Project 2">
+                    <img src="p15.jpg" alt="Project 2">
                 </div>
                 <div class="bullet-card">
                     <div class="icon">
