@@ -760,8 +760,7 @@ p {
     }
 
     .section {
-        height: 100vh; /* Full viewport height for mobile */
-        padding: 20px; /* Adjust padding for better fit on mobile */
+        height: 60vh; /* Full viewport height for mobile */
     }
 }
 
