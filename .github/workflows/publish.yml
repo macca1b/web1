@@ -9,32 +9,36 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build and Push
+
     steps:
-      - name: git-checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Explicitly set Node.js 20
+          node-version: '20'
 
-      - name: List directory contents
+      - name: List root directory contents
         run: ls -al
-        working-directory: ./web1/web1 # Ensure this path matches your directory structure
+
+      - name: List project directory contents
+        run: ls -al
+        working-directory: ./web1
 
       - name: Install all dependencies
         run: npm install
-        working-directory: ./web1/web1 # Ensure this path matches your directory structure
+        working-directory: ./web1
 
       - name: Build
-        run: npm run build # The build command of your project
-        working-directory: ./web1/web1 # Ensure this path matches your directory structure
+        run: npm run build
+        working-directory: ./web1
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
         env:
           REPO: self
-          BRANCH: main # The branch name where you want to push the assets
-          FOLDER: main # The directory where your assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
-          MESSAGE: "Build: ({sha}) {msg}" # The commit message
+          BRANCH: main
+          FOLDER: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Build: ({sha}) {msg}"
