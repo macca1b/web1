@@ -3,7 +3,7 @@ name: Generate a build and push to another branch
 on:
   push:
     branches:
-      - main # The branch name your are commit the new changes
+      - main # The branch name you are committing the new changes to
 
 jobs:
   build:
@@ -13,11 +13,22 @@ jobs:
       - name: git-checkout
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Explicitly set Node.js 20
+
+      - name: List directory contents
+        run: ls -al
+        working-directory: ./web1/web1 # Ensure this path matches your directory structure
+
       - name: Install all dependencies
         run: npm install
+        working-directory: ./web1/web1 # Ensure this path matches your directory structure
 
       - name: Build
         run: npm run build # The build command of your project
+        working-directory: ./web1/web1 # Ensure this path matches your directory structure
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
