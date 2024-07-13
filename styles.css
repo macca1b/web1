@@ -495,10 +495,12 @@ h8 {
     height: auto;
     margin: 0 auto;
     text-align: center;
+    align-items: center;
 }
 .responsive-video {
     width: 80%;  /* Adjust this value as needed */
     height: auto;  /* Maintain aspect ratio */
+    align-items: center;
 }
 
 
