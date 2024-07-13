@@ -1,8 +1,10 @@
 name: Deploy website to Hostinger
+
 on:
   push:
     branches:
-      - main # The branch name you are committing the new changes to
+      - main  # The branch name you are committing the new changes to
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,9 +25,11 @@ jobs:
       
       - name: Push to Hostinger
         uses: s0/git-publish-subdir-action@develop
+        with:
+          source-directory: .  # Deploy the contents of the root folder
         env:
           REPO: https://github.com/macca1b/web1.git
-          BRANCH: main  # Keep deploying to main as per your original setup
+          BRANCH: main  # Deploy to main branch on Hostinger
           FOLDER: .  # Deploy the contents of the root folder
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Deploy: ({sha}) {msg}"
