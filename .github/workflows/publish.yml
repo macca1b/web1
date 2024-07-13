@@ -24,7 +24,7 @@ jobs:
       - name: Push to Hostinger
         uses: s0/git-publish-subdir-action@develop
         env:
-          REPO: macca1b/web1
+          REPO: https://github.com/macca1b/web1.git
           BRANCH: main  # Keep deploying to main as per your original setup
           FOLDER: .  # Deploy the contents of the root folder
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
