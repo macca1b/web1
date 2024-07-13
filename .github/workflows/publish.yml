@@ -26,10 +26,9 @@ jobs:
       - name: Push to Hostinger
         uses: s0/git-publish-subdir-action@develop
         with:
-          source-directory: .  # Deploy the contents of the root folder
+          directory: .  # The directory to deploy
+          branch: main  # The branch to deploy to
         env:
-          REPO: https://github.com/macca1b/web1.git
-          BRANCH: main  # Deploy to main branch on Hostinger
-          FOLDER: .  # Deploy the contents of the root folder
+          REPO: https://github.com/macca1b/web1.git  # Your repository URL
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Deploy: ({sha}) {msg}"
