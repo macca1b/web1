@@ -1,24 +1,27 @@
 name: Deploy website to Hostinger
-on:
-  push:
-    branches:
-      - main # The branch name you are committing the new changes to
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploy to Hostinger
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-      
-      - name: List web1 directory contents
-        run: ls -al web1
-      
-      - name: Push to Hostinger
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: main  # Keep deploying to main as per your original setup
-          FOLDER: web1  # Deploy the contents of the web1 folder
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "Deploy: ({sha}) {msg}"
+   on:
+     push:
+       branches:
+         - main # The branch name you are committing the new changes to
+   jobs:
+     deploy:
+       runs-on: ubuntu-latest
+       name: Deploy to Hostinger
+       steps:
+         - name: Checkout repository
+           uses: actions/checkout@v3
+         
+         - name: List root directory contents
+           run: ls -al
+         
+         - name: List subdirectories
+           run: find . -maxdepth 2 -type d
+         
+         - name: Push to Hostinger
+           uses: s0/git-publish-subdir-action@develop
+           env:
+             REPO: self
+             BRANCH: main  # Keep deploying to main as per your original setup
+             FOLDER: .  # Deploy the contents of the root folder
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+             MESSAGE: "Deploy: ({sha}) {msg}"
