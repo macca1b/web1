@@ -491,16 +491,18 @@ h8 {
 
 
 .video-container {
-    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     height: auto;
     margin: 0 auto;
     text-align: center;
-    align-items: center;
 }
 .responsive-video {
     width: 80%;  /* Adjust this value as needed */
     height: auto;  /* Maintain aspect ratio */
-    align-items: center;
+    object-fit: contain;
 }
 
 
@@ -779,6 +781,21 @@ h8 {
         margin-bottom: 0px; /* Reduce the gap between h4 and the image */
     }
     
+    .video-container {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .responsive-video {
+        width: 95%;  /* Adjust this value as needed */
+        height: auto;  /* Maintain aspect ratio */
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: -20px;
+    }
 }
 
 
