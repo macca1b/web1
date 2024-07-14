@@ -490,21 +490,21 @@ h8 {
 }
 
 
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    text-align: center;
-}
-.responsive-video {
-    width: 80%;  /* Adjust this value as needed */
+.responsive-videoh {
+    width: 95%;  /* Adjust this value as needed */
     height: auto;  /* Maintain aspect ratio */
-    object-fit: contain;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: -20px;
 }
 
+.responsive-video {
+    width: 95%;  /* Adjust this value as needed */
+    height: auto;  /* Maintain aspect ratio */
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
 
 
 @media (min-width: 768px) and (max-width: 1200px) {
