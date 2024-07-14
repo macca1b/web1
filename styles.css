@@ -454,7 +454,7 @@ h6 {
 }
 
 h7 {
-    font-size: 2.6em;
+    font-size: 2.5em;
     color: #000000;
     font-weight: bold;
 }
@@ -522,15 +522,22 @@ h8 {
         align-items: center;
     }
     
-
-
-
     .portfolio-itemh img {
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
     }
-    
+
+    .bullet-card p {
+        font-size: 0.7em;
+        color: #000000;
+        margin: 0;
+        /* Enable text wrapping */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        }
+
 }
 
 @media (max-width: 768px) {
@@ -679,6 +686,10 @@ h8 {
             font-size: 1.3em; /* Adjust the size as needed */
         }
     
+
+
+
+        
     }
 
 @media (max-width: 480px) {
@@ -798,6 +809,7 @@ h8 {
         margin-bottom: 0px;
         margin-top: 0px;
     }
+
 }
 
 
