@@ -514,7 +514,7 @@ h8 {
        only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
     
         .bullet-card p {
-            font-size: 0.7em;
+            font-size: 0.6em;
             color: #000000;
             margin: 0;
             /* Enable text wrapping */
