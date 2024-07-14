@@ -490,6 +490,7 @@ h8 {
 }
 
 
+
 .responsive-videoh {
     width: 95%;  /* Adjust this value as needed */
     height: auto;  /* Maintain aspect ratio */
@@ -781,20 +782,21 @@ h8 {
         margin-bottom: 0px; /* Reduce the gap between h4 and the image */
     }
     
-    .video-container {
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .responsive-video {
+   
+    .responsive-videoh {
         width: 95%;  /* Adjust this value as needed */
         height: auto;  /* Maintain aspect ratio */
         align-items: center;
         margin-bottom: 50px;
         margin-top: -20px;
+    }
+
+    .responsive-video {
+        width: 95%;  /* Adjust this value as needed */
+        height: auto;  /* Maintain aspect ratio */
+        align-items: center;
+        margin-bottom: 0px;
+        margin-top: 0px;
     }
 }
 
