@@ -511,7 +511,7 @@ h8 {
 
 
 
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 768px) and (max-width: 1370px) {
     .portfolio-grid {
         padding-left: 20px; /* Add padding to the left side - */ 
     }
@@ -532,7 +532,7 @@ h8 {
     }
 
     .bullet-card p {
-        font-size: 0.7em;
+        font-size: 0.6em;
         color: #000000;
         margin: 0;
         /* Enable text wrapping */
@@ -817,19 +817,4 @@ h8 {
 
 
 
-
-/* Adjust font size for iPads (including 7th generation) */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait),
-       only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) {
-    
-        .bullet-card p {
-            font-size: 0.5em;
-            color: #000000;
-            margin: 0;
-            /* Enable text wrapping */
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            hyphens: auto;
-            }
-}
 
