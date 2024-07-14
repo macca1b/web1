@@ -509,20 +509,7 @@ h8 {
 
 
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) 
-   {
-    .bullet-card p {
-        font-size: 0.5em;
-        color: #000000;
-        margin: 0;
-        /* Enable text wrapping */
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        hyphens: auto;
-     }
-   }
-
-@media (min-width: 768px) and (max-width: 1370px) and (orientation: landscape) 
+@media (min-width: 768px) and (max-width: 1370px)
     {
     .portfolio-grid {
         padding-left: 20px; /* Add padding to the left side - */ 
