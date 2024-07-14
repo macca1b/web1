@@ -212,7 +212,6 @@ main {
 }
 
 
-
 .portfolio-gridh {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -220,6 +219,7 @@ main {
     max-width: 1200px;
     width: 100%;
     align-items: center;
+    margin-top: 50px;
 }
 
 .portfolio-itemh img {
