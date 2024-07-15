@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V05QCV8J90"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+      gtag('config', 'G-V05QCV8J90');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Brendan MacCabe | Data & CDP Specialist</title>
@@ -50,6 +61,7 @@
                     <h7>I'm Brendan</h7>
                     <h6>CDP Solutions Specialist</h6>
                     <h4><i class="fa-solid fa-location-dot" style="color: #3eaa00;"></i> Brighton, UK</h4><br>
+                    <h9>welcome to my portfoilo site...</h9>
                 </div>
             </div> 
             <video autoplay muted loop class="responsive-videoh">
@@ -245,13 +257,16 @@
     setTimeout(scrollToTop, 100);
 
     // Voiceflow chat implementation
+    
     (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
         v.onload = function() {
+
             window.voiceflow.chat.load({
                 verify: { projectID: '6684444745de04a0d77d7bd8' },
                 url: 'https://general-runtime.voiceflow.com',
                 versionID: 'production'
+
             }).then(() => {
                 // Proactive message scheduling
                 setTimeout(function() {
