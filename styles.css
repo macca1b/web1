@@ -29,10 +29,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-self: auto;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 0px;
     flex-wrap: wrap;
+    height: 40px;
 }
 
 .nav-links {
@@ -429,6 +431,15 @@ h3 {
     color: #000000;
 }
 
+h1 {
+    font-size: 1.2em;
+    color: #000000;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
 h2 {
     color: #000000;
     font-weight: 700;
@@ -551,22 +562,33 @@ h8 {
         hyphens: auto;
         }
 
-}
+        .navbar > *:first-child {
+            margin-left: 20px; /* Adjust margin as needed */
+        }
+
+    }
 
 @media (max-width: 768px) {
 
     .navbar {
+        display: flex; /* Ensure the navbar is using Flexbox */
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 0px;
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+    }
+
+    .navbar > *:first-child {
+        margin-left: 20px; /* Adjust margin as needed */
     }
 
     .menu-icon {
         display: block;
         cursor: pointer;
         position:absolute;
-        top: 25px;
+        top: 20px;
         right: 20px;
     }
 
@@ -652,10 +674,10 @@ h8 {
 
  
     h6 {
-        font-size: 1.5em;
+        font-size: 2em;
         color: #000000;
         font-weight: 400;
-        margin: 0; /* Reset margins */
+        margin-top: 0px; /* Reset margins */
         padding: 0;
     }
 
@@ -664,8 +686,8 @@ h8 {
         color: #000000;
         font-weight: 400;
         margin: 0; /* Reset margins */
-        padding-top: 20px;
-        padding-bottom: 0px;
+        padding-top: 5px;
+        padding-bottom: 10px;
     }
 
     hr.section-divider {
@@ -696,7 +718,7 @@ h8 {
 
     
     h1 {
-            font-size: 1.3em; /* Adjust the size as needed */
+            font-size: 0.9em; /* Adjust the size as needed */
     }
     
 
@@ -704,9 +726,10 @@ h8 {
             color: #000000;
             font-weight: 700;
             font-size: 0.8em;
+            padding-bottom: 20px;
+            padding-top: 0px;
+        }
     }
-    
-}
 
 @media (max-width: 480px) {
     
@@ -767,6 +790,10 @@ h8 {
         padding-top: 5px;
     }
     
+
+
+
+
     hr.section-divider {
         margin-top: 80px; /* Ensure space between image and divider */
     }
