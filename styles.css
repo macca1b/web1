@@ -586,7 +586,7 @@ h8 {
     }
 
     .hero-text h2 {
-        font-size: 0.8rem;
+        font-size: 0.8em;
     }
 
     .hero-text h3 {
@@ -700,7 +700,7 @@ h8 {
     h2 {
             color: #000000;
             font-weight: 700;
-            font-size: 0.8;
+            font-size: 0.8em;
     }
     
 }
