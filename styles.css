@@ -143,7 +143,7 @@ main {
 }
 
 .hero-text h2 {
-    font-size: 4em;
+    font-size: 1.2em;
     margin: 0;
 }
 
@@ -429,11 +429,18 @@ h3 {
     color: #000000;
 }
 
+h2 {
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.5;
+}
+
 
 h4 {
     font-size: 1.2em;
     color: #000000;
-    font-weight: 400;
+    font-weight: 200;
+    margin-top: 10px;
 }
 
 h5 {
@@ -471,6 +478,7 @@ h8 {
     color: #000000;
     font-weight: bold;
 }
+
 
 
 .bullet-cardh {
@@ -578,7 +586,7 @@ h8 {
     }
 
     .hero-text h2 {
-        font-size: 2.5rem;
+        font-size: 0.8rem;
     }
 
     .hero-text h3 {
@@ -681,18 +689,21 @@ h8 {
             font-size: 2.7em; /* Adjust the size as needed */
             padding-top: 30px;
             padding-bottom: 0;
-        }
+    }
 
     
     h1 {
             font-size: 1.3em; /* Adjust the size as needed */
-        }
+    }
     
 
-
-
-        
+    h2 {
+            color: #000000;
+            font-weight: 700;
+            font-size: 0.5;
     }
+    
+}
 
 @media (max-width: 480px) {
     
