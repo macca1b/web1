@@ -581,7 +581,7 @@ h8 {
     }
 
     .navbar > *:first-child {
-        margin-left: 20px; /* Adjust margin as needed */
+        margin-left: -15px; /* Adjust margin as needed */
     }
 
     .menu-icon {
@@ -741,8 +741,10 @@ h8 {
         margin: 0 auto;
         padding: 0 20px;
         flex-wrap: wrap;
+        justify-content: center; /* Center items vertically */
     }
-    
+
+
     .nav-links {
         display: none;
         flex-direction: column;
