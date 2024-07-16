@@ -581,7 +581,7 @@ h8 {
     }
 
     .navbar > *:first-child {
-        margin-left: -15px; /* Adjust margin as needed */
+        margin-left: 0px; /* Adjust margin as needed */
     }
 
     .menu-icon {
