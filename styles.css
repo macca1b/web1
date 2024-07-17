@@ -741,7 +741,7 @@ h8 {
         margin: 0 auto;
         padding: 0 20px;
         flex-wrap: wrap;
-        justify-content: center; /* Center items vertically */
+        justify-content: space-evenly ; /* Center items vertically */
     }
 
 
