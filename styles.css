@@ -93,7 +93,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 20px;
+    padding: 20px 20px;
     height: 2vh;
     box-sizing: border-box;
     scroll-snap-align: start;
@@ -565,6 +565,17 @@ h8 {
         .navbar > *:first-child {
             margin-left: 20px; /* Adjust margin as needed */
         }
+
+
+    .navbar {
+        display: flex; /* Ensure the navbar is using Flexbox */
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0px;
+        align-items: center; /* Center items horizontally */
+        justify-content: space-evenly; /* Center items vertically */
+    }
+
 
     }
 
