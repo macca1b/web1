@@ -755,6 +755,8 @@ h8 {
     
     .nav-links.active {
         display: flex;
+        color: #0a2c77; /* Use your preferred highlight color */
+        font-weight: bold;
     }
 
 
