@@ -732,7 +732,7 @@ h8 {
     }
 
 @media (max-width: 480px) {
-    
+  
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -741,16 +741,17 @@ h8 {
         margin: 0 auto;
         padding: 0 20px;
         flex-wrap: wrap;
-        justify-content: space-evenly ; /* Center items vertically */
+        justify-content: space-evenly; /* Center items vertically */
     }
-
 
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
         text-align: right;
+        background-color: white;
     }
+
     
     .nav-links.active {
         display: flex;
