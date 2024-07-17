@@ -15,18 +15,25 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Menu icon not found');
     }
 
-
-  
     const navLinkElements = document.querySelectorAll('.nav-links a');
     navLinkElements.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor behavior
             console.log('Nav link clicked');
+
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.remove('active'); // Ensure the menu closes
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // Smooth scroll to the target element
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
 });
-
-
-
-
