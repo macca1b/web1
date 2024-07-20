@@ -80,7 +80,8 @@
                     <video autoplay muted loop class="responsive-video">
                         <source src="vtech.mp4" type="video/mp4">
                         Your browser does not support the video tag.
-                    </video>                </div>
+                    </video>
+                </div>
                 <div class="bullet-card">
                     <div class="icon">
                         <i class="fa-solid fa-bolt" style="color: #3eaa00;"></i>
@@ -237,60 +238,78 @@
 
 <script>
 (function() {
-    function scrollToTop() {
-        if (window.pageYOffset !== 0) {
-            window.scrollTo(0, 0);
+    let sections = document.querySelectorAll('section');
+    let currentSectionIndex = 0;
+    let currentCardIndex = 0;
+    let hoverInterval;
+    let autoScrollTimeout;
+    let inactivityTimeout;
+    
+    function scrollToNextSection() {
+        // Move to the next section
+        if (currentSectionIndex < sections.length - 1) {
+            currentSectionIndex++;
+        } else {
+            currentSectionIndex = 0; // Loop back to the first section
+        }
+        currentCardIndex = 0; // Reset card index for the new section
+        sections[currentSectionIndex].scrollIntoView({ behavior: "smooth" });
+        
+        // Start hovering on cards in the new section after a 1 second delay
+        setTimeout(startHoveringOnCards, 1000);
+    }
+
+    function startHoveringOnCards() {
+        let cards = sections[currentSectionIndex].querySelectorAll('.bullet-card');
+        if (cards.length > 0) {
+            hoverOnCard(cards[currentCardIndex]);
+            hoverInterval = setInterval(() => {
+                cards[currentCardIndex].classList.remove('hover');
+                currentCardIndex++;
+                if (currentCardIndex >= cards.length) {
+                    clearInterval(hoverInterval);
+                    setTimeout(scrollToNextSection, 5000); // Wait before moving to the next section
+                } else {
+                    hoverOnCard(cards[currentCardIndex]);
+                }
+            }, 5000); // Hover on each card for 5 seconds
+        } else {
+            setTimeout(scrollToNextSection, 5000); // No cards, move to the next section after delay
         }
     }
 
-    function isDesktop() {
-        return !/Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    function hoverOnCard(card) {
+        card.classList.add('hover');
     }
 
-    function toggleMenu() {
-        const navLinks = document.getElementById('nav-links');
-        navLinks.classList.toggle('active');
+    function startAutoScroll() {
+        autoScrollTimeout = setTimeout(scrollToNextSection, 5000); // Adjust time (5000ms) as needed
     }
 
-    // Scroll to top
-    window.addEventListener('load', scrollToTop, false);
-    document.addEventListener('DOMContentLoaded', scrollToTop, false);
-    setTimeout(scrollToTop, 100);
+    function resetInactivityTimeout() {
+        clearTimeout(inactivityTimeout);
+        inactivityTimeout = setTimeout(() => {
+            startAutoScroll();
+        }, 20000); // 30 seconds of inactivity
+    }
 
-    // Voiceflow chat implementation
-    
-    (function(d, t) {
-        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-        v.onload = function() {
+    function stopAutoScroll() {
+        clearTimeout(autoScrollTimeout);
+        clearInterval(hoverInterval);
+    }
 
-            window.voiceflow.chat.load({
-                verify: { projectID: '6684444745de04a0d77d7bd8' },
-                url: 'https://general-runtime.voiceflow.com',
-                versionID: 'production'
+    document.addEventListener('scroll', () => {
+        stopAutoScroll();
+        resetInactivityTimeout();
+    });
 
-            }).then(() => {
-                // Proactive message scheduling
-                setTimeout(function() {
-                    window.voiceflow.chat.proactive.push(
-                        { type: 'text', payload: { message: 'Hey there!' } }
-                    );
-                }, 2500);
-                
-                // Conditional chat opening on desktop
-                if (isDesktop()) {
-                    setTimeout(function() {
-                        window.voiceflow.chat.open();
-                    }, 4000);
-                }
-            });
-        };
-        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-        v.type = "text/javascript";
-        s.parentNode.insertBefore(v, s);
-    })(document, 'script');
+    document.addEventListener('click', () => {
+        stopAutoScroll();
+        resetInactivityTimeout();
+    });
 
-    // Expose toggleMenu to global scope if needed
-    window.toggleMenu = toggleMenu;
+    // Start the scrolling and hovering process
+    startAutoScroll();
 })();
 </script>
 
