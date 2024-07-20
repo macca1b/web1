@@ -374,6 +374,7 @@ hr.section-divider {
     align-items: center;
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden; /* Prevent content from overflowing */
+    hyphens: manual;
 }
 
 .bullet-card .icon {
@@ -391,10 +392,10 @@ hr.section-divider {
     font-size: 0.8em;
     color: #000000;
     margin: 0;
-    /* Enable text wrapping */
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
+    /* Enable text wrapping */ 
+    overflow-wrap: normal;
+    word-wrap: normal;
+    hyphens: manual;
 }
 
 
@@ -458,11 +459,11 @@ h4 {
 }
 
 h5 {
-    font-size: 3em;
+    font-size: 3.2em;
     color: #000000;
     margin-bottom: 0    px; /* Adjust as necessary */
     margin-top: 10px;
-    margin-bottom: 30px; /* Adjust this value as needed */
+    margin-bottom: 50px; /* Adjust this value as needed */
     padding-bottom: 0;   /* Ensure padding is not adding extra space */
 }
 
@@ -533,8 +534,8 @@ h8 {
 .bullet-card.hover {
     transform: scale(1.1);
     transition: transform 0.3s;
+    box-shadow: 0 0 5px #3eaa00;
 }
-
 
 
 
@@ -566,10 +567,10 @@ h8 {
         font-size: 0.7em;
         color: #000000;
         margin: 0;
-        /* Enable text wrapping */
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        hyphens: auto;
+        /* Enable text wrapping */ 
+        overflow-wrap: normal;
+        word-wrap: normal;
+        hyphens: manual;
         }
 
         .navbar > *:first-child {
@@ -799,7 +800,7 @@ h8 {
         }
     
         .bullet-card p, .bullet-card2 p {
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             align-items: center;
         }
     
