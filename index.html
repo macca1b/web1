@@ -241,7 +241,10 @@
         let hoverInterval;
         let autoScrollTimeout;
         let autoScrolling = false;
-        
+        let inactivityTimeout;
+        let chatbotOpen = false;
+        let chatbotInUse = false;
+
         function scrollToNextSection() {
             if (currentSectionIndex < sections.length - 1) {
                 currentSectionIndex++;
@@ -252,7 +255,7 @@
             sections[currentSectionIndex].scrollIntoView({ behavior: "smooth" });
             setTimeout(startHoveringOnCards, 1000);
         }
-    
+
         function startHoveringOnCards() {
             let cards = sections[currentSectionIndex].querySelectorAll('.bullet-card');
             if (cards.length > 0) {
@@ -262,7 +265,7 @@
                     currentCardIndex++;
                     if (currentCardIndex >= cards.length) {
                         clearInterval(hoverInterval);
-                        setTimeout(scrollToNextSection, 3000); // Wait before moving to the next section
+                        setTimeout(scrollToNextSection, 2000); // Wait before moving to the next section
                     } else {
                         hoverOnCard(cards[currentCardIndex]);
                     }
@@ -271,32 +274,46 @@
                 setTimeout(scrollToNextSection, 5000); // No cards, move to the next section after delay
             }
         }
-    
+
         function hoverOnCard(card) {
             card.classList.add('hover');
             card.scrollIntoView({ behavior: "smooth", block: "center" }); // Scroll to the card smoothly and center it
         }
-    
+
         function startAutoScroll() {
-            if (!autoScrolling) {
+            if (!autoScrolling && !chatbotInUse) {
                 autoScrolling = true;
                 scrollToNextSection();
             }
         }
-    
+
         function stopAutoScroll() {
             autoScrolling = false;
             clearTimeout(autoScrollTimeout);
             clearInterval(hoverInterval);
-    
+            
             // Remove hover state from the currently hovered card
             let hoveredCards = document.querySelectorAll('.bullet-card.hover');
             hoveredCards.forEach(card => card.classList.remove('hover'));
         }
-    
+
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimeout);
+            inactivityTimeout = setTimeout(() => {
+                if (!autoScrolling && !chatbotInUse) {
+                    startAutoScroll();
+                }
+            }, 15000); // 20 seconds of inactivity
+        }
+
         document.addEventListener('scroll', stopAutoScroll);
         document.addEventListener('click', stopAutoScroll);
-    
+        document.addEventListener('mousemove', resetInactivityTimer);
+        document.addEventListener('keypress', resetInactivityTimer);
+
+        // Start the inactivity timer on page load
+        resetInactivityTimer();
+
         // Expose startAutoScroll to global scope
         window.startAutoScroll = startAutoScroll;
     })();
@@ -310,7 +327,6 @@
                 url: 'https://general-runtime.voiceflow.com',
                 versionID: 'production'
             }).then(() => {
-                let chatbotOpen = false;
                 let inactivityTimer;
     
                 // Proactive message scheduling
@@ -319,18 +335,18 @@
                         { type: 'text', payload: { message: 'Hey there!' } }
                     );
                     
-                    // Open chatbot 2 seconds after "Hey there!" message
+                // Open chatbot 2 seconds after "Hey there!" message
                     setTimeout(function() {
                         window.voiceflow.chat.open();
                         chatbotOpen = true;
                         resetInactivityTimer();
                     }, 2000);
-                }, 2500);
+                }, 2500); 
     
                 function resetInactivityTimer() {
                     clearTimeout(inactivityTimer);
                     inactivityTimer = setTimeout(function() {
-                        if (chatbotOpen) {
+                        if (chatbotOpen && !chatbotInUse) {
                             window.voiceflow.chat.close();
                             chatbotOpen = false;
                             // Trigger auto-scrolling 1 second after chatbot closes
@@ -340,26 +356,35 @@
                                 }
                             }, 1000);
                         }
-                    }, 8000); // 5 seconds of inactivity
+                    }, 8000); // 8 seconds of inactivity
+                }
+
+                function checkChatbotInUse() {
+                    chatbotInUse = true;
+                    clearTimeout(inactivityTimer);
                 }
     
                 // Reset inactivity timer on user interaction
                 window.voiceflow.chat.on('message', resetInactivityTimer);
                 window.voiceflow.chat.on('open', function() {
                     chatbotOpen = true;
+                    chatbotInUse = false; // Reset this to false when chatbot opens
                     resetInactivityTimer();
                 });
                 window.voiceflow.chat.on('close', function() {
                     chatbotOpen = false;
+                    chatbotInUse = false; // Reset this to false when chatbot closes
                     clearTimeout(inactivityTimer);
                 });
+                window.voiceflow.chat.on('interact', checkChatbotInUse);
             });
         };
         v.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
         v.type = "text/javascript";
         s.parentNode.insertBefore(v, s);
     })(document, 'script');
-    </script>
+</script>
+
 
 
 
