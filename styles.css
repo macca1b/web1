@@ -540,21 +540,24 @@ h8 {
 }
 
 
-/* Container for the two-column layout in the project detail section */
+
+
+
+/* Layout for the project detail section with two columns */
 .project-detail-layout {
   display: flex;
-  gap: 1em; /* Adjust gap as needed */
+  gap: 1em;
   max-width: 1200px;
-  margin: 2em auto; /* Center the layout */
+  margin: 2em auto;
   padding: 0 1em;
 }
 
-/* Left column: takes 80% of the width */
+/* Left column: 80% width */
 .project-detail-main {
   flex: 0 0 80%;
 }
 
-/* Right column: takes 20% of the width and stacks cards vertically */
+/* Right column: 20% width, stacking two small cards vertically */
 .project-detail-sidebar {
   flex: 0 0 20%;
   display: flex;
@@ -562,20 +565,20 @@ h8 {
   gap: 1em;
 }
 
-/* Styling for the big project detail card */
+/* Big project detail card - using same border styling as .bullet-card */
 .project-detail-card {
   background: #ffffff;
   padding: 1.5em;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #ccc;  /* Matching existing bullet-card borders */
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Styling for the small project cards in the sidebar */
+/* Small project cards in the sidebar - using same border styling */
 .project-small-card {
   background: #ffffff;
   padding: 1em;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #ccc;  /* Matching existing bullet-card borders */
   border-radius: 4px;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
@@ -595,6 +598,22 @@ h8 {
 .project-small-card a:hover {
   text-decoration: underline;
 }
+
+/* Responsive adjustments: stack columns on smaller screens */
+@media (max-width: 768px) {
+  .project-detail-layout {
+    flex-direction: column;
+  }
+  .project-detail-main,
+  .project-detail-sidebar {
+    flex: 1 0 100%;
+  }
+}
+
+
+
+
+
 
 
 
