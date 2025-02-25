@@ -883,7 +883,9 @@ h8 {
             align-items: center;
             margin-bottom: 0px;
             margin-top: 0px;
+            aspect-ratio: 16 / 9;
+            object-fit: cover; /* or 'contain' if you prefer letterboxing */
         }
-    
+        
     }
     
