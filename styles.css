@@ -540,6 +540,61 @@ h8 {
 }
 
 
+/* Container for the two-column layout in the project detail section */
+.project-detail-layout {
+  display: flex;
+  gap: 1em; /* Adjust gap as needed */
+  max-width: 1200px;
+  margin: 2em auto; /* Center the layout */
+  padding: 0 1em;
+}
+
+/* Left column: takes 80% of the width */
+.project-detail-main {
+  flex: 0 0 80%;
+}
+
+/* Right column: takes 20% of the width and stacks cards vertically */
+.project-detail-sidebar {
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* Styling for the big project detail card */
+.project-detail-card {
+  background: #ffffff;
+  padding: 1.5em;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Styling for the small project cards in the sidebar */
+.project-small-card {
+  background: #ffffff;
+  padding: 1em;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.project-small-card h4 {
+  margin-top: 0;
+  font-size: 1.1em;
+}
+
+.project-small-card a {
+  text-decoration: none;
+  color: #3eaa00;
+  font-weight: 600;
+}
+
+.project-small-card a:hover {
+  text-decoration: underline;
+}
 
 
 
