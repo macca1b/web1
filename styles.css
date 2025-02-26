@@ -541,6 +541,25 @@ h8 {
 
 
 
+/* add a small bullet card */
+
+.bullet-card-small {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    width: 200px;
+    height: 165px;
+    align-items: top;
+    align-content: top;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+
+
 
 
 
