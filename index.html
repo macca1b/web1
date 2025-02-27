@@ -546,6 +546,17 @@
       let autoScrolling = false;
       let inactivityTimeout;
   
+      // Helper: Update currentSectionIndex based on what is in view
+      function updateCurrentSectionIndex() {
+          sections.forEach((section, index) => {
+              let rect = section.getBoundingClientRect();
+              // If the top of the section is near the top half of the viewport, set that as current.
+              if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+                  currentSectionIndex = index;
+              }
+          });
+      }
+  
       function scrollToNextSection() {
           if (currentSectionIndex < sections.length - 1) {
               currentSectionIndex++;
@@ -595,20 +606,20 @@
           hoveredCards.forEach(card => card.classList.remove('hover'));
       }
   
-      // New function: resume the hover sequence from the beginning of the current section
+      // New: Resume the hover sequence from the start of the current (visible) section.
       function resumeCurrentSection() {
           clearInterval(hoverInterval);
+          updateCurrentSectionIndex(); // Ensure we are working with the section currently in view
           currentCardIndex = 0;
           startHoveringOnCards();
       }
   
-      // Combined handler: stops auto-scroll and resets inactivity timer
+      // Combined handler: stop auto-scroll and reset the inactivity timer.
       function handleUserInteraction() {
           stopAutoScroll();
           resetInactivityTimer();
       }
   
-      // Reset inactivity timer to resume the current section after 15 seconds
       function resetInactivityTimer() {
           clearTimeout(inactivityTimeout);
           inactivityTimeout = setTimeout(() => {
@@ -694,6 +705,7 @@
       s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
+
 
 
 
