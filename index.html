@@ -621,7 +621,8 @@
     })();
     
     // Voiceflow chat implementation
-    
+
+    /*
      (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
         v.onload = function() {
@@ -687,9 +688,79 @@
         v.type = "text/javascript";
         s.parentNode.insertBefore(v, s);
     })(document, 'script');
+*/
 
-
+    <script type="text/javascript">
+  (function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+      window.voiceflow.chat.load({
+        verify: { projectID: '6684444745de04a0d77d7bd8' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production',
+        voice: { 
+          url: "https://runtime-api.voiceflow.com" 
+        }
+      }).then(() => {
+        let inactivityTimer;
+        
+        // Proactive message scheduling: push "Hey there!" then open chatbot after 2 seconds.
+        setTimeout(function() {
+          window.voiceflow.chat.proactive.push({
+            type: 'text',
+            payload: { message: 'Hey there!' }
+          });
+          setTimeout(function() {
+            window.voiceflow.chat.open();
+            chatbotOpen = true;
+            resetInactivityTimer();
+          }, 2000);
+        }, 2500);
+    
+        function resetInactivityTimer() {
+          clearTimeout(inactivityTimer);
+          inactivityTimer = setTimeout(function() {
+            if (chatbotOpen && !chatbotInUse) {
+              window.voiceflow.chat.close();
+              chatbotOpen = false;
+              // Trigger auto-scrolling 1 second after chatbot closes
+              setTimeout(function() {
+                if (typeof window.startAutoScroll === 'function') {
+                  window.startAutoScroll();
+                }
+              }, 1000);
+            }
+          }, 8000); // 8 seconds of inactivity
+        }
+    
+        function checkChatbotInUse() {
+          chatbotInUse = true;
+          clearTimeout(inactivityTimer);
+        }
+    
+        // Reset inactivity timer on user interaction
+        window.voiceflow.chat.on('message', resetInactivityTimer);
+        window.voiceflow.chat.on('open', function() {
+          chatbotOpen = true;
+          chatbotInUse = false; // Reset on open
+          resetInactivityTimer();
+        });
+        window.voiceflow.chat.on('close', function() {
+          chatbotOpen = false;
+          chatbotInUse = false; // Reset on close
+          clearTimeout(inactivityTimer);
+        });
+        window.voiceflow.chat.on('interact', checkChatbotInUse);
+      });
+    };
+    // Load the new widget-next bundle
+    v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+  })(document, 'script');
 </script>
+
+
 
     
 </script>
