@@ -532,7 +532,6 @@
     <!-- Your footer content here if any -->
 </footer>
 
-
 <script>
   // Global chatbot flags (shared across modules)
   var chatbotOpen = false;
@@ -596,28 +595,35 @@
           hoveredCards.forEach(card => card.classList.remove('hover'));
       }
   
+      // New function: resume the hover sequence from the beginning of the current section
+      function resumeCurrentSection() {
+          clearInterval(hoverInterval);
+          currentCardIndex = 0;
+          startHoveringOnCards();
+      }
+  
       // Combined handler: stops auto-scroll and resets inactivity timer
       function handleUserInteraction() {
           stopAutoScroll();
           resetInactivityTimer();
       }
   
+      // Reset inactivity timer to resume the current section after 15 seconds
       function resetInactivityTimer() {
           clearTimeout(inactivityTimeout);
           inactivityTimeout = setTimeout(() => {
               if (!autoScrolling && !chatbotInUse) {
-                  startAutoScroll();
+                  resumeCurrentSection();
               }
           }, 15000); // 15 seconds of inactivity
       }
   
-      // Listen for various user interactions
       document.addEventListener('scroll', handleUserInteraction);
       document.addEventListener('click', handleUserInteraction);
       document.addEventListener('mousemove', resetInactivityTimer);
       document.addEventListener('keypress', resetInactivityTimer);
   
-      // Start timer on page load
+      // Start the inactivity timer on page load
       resetInactivityTimer();
       window.startAutoScroll = startAutoScroll;
   })();
@@ -688,6 +694,7 @@
       s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
+
 
 
 
