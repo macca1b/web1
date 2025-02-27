@@ -533,9 +533,8 @@
 </footer>
 
 
-
 <script>
-  // Global flags for chatbot (shared between auto-scroll and chatbot code)
+  // Global chatbot flags (shared across modules)
   var chatbotOpen = false;
   var chatbotInUse = false;
   
@@ -568,13 +567,13 @@
                   currentCardIndex++;
                   if (currentCardIndex >= cards.length) {
                       clearInterval(hoverInterval);
-                      setTimeout(scrollToNextSection, 2000); // Wait before moving to the next section
+                      setTimeout(scrollToNextSection, 2000); // Wait before moving to next section
                   } else {
                       hoverOnCard(cards[currentCardIndex]);
                   }
               }, 5000); // Hover on each card for 5 seconds
           } else {
-              setTimeout(scrollToNextSection, 5000); // No cards, move to the next section after delay
+              setTimeout(scrollToNextSection, 5000);
           }
       }
   
@@ -592,10 +591,15 @@
   
       function stopAutoScroll() {
           autoScrolling = false;
-          clearTimeout(autoScrollTimeout);
           clearInterval(hoverInterval);
           let hoveredCards = document.querySelectorAll('.bullet-card.hover');
           hoveredCards.forEach(card => card.classList.remove('hover'));
+      }
+  
+      // Combined handler: stops auto-scroll and resets inactivity timer
+      function handleUserInteraction() {
+          stopAutoScroll();
+          resetInactivityTimer();
       }
   
       function resetInactivityTimer() {
@@ -607,12 +611,13 @@
           }, 15000); // 15 seconds of inactivity
       }
   
-      document.addEventListener('scroll', stopAutoScroll);
-      document.addEventListener('click', stopAutoScroll);
+      // Listen for various user interactions
+      document.addEventListener('scroll', handleUserInteraction);
+      document.addEventListener('click', handleUserInteraction);
       document.addEventListener('mousemove', resetInactivityTimer);
       document.addEventListener('keypress', resetInactivityTimer);
   
-      // Start the inactivity timer on page load
+      // Start timer on page load
       resetInactivityTimer();
       window.startAutoScroll = startAutoScroll;
   })();
@@ -640,7 +645,6 @@
                   setTimeout(function() {
                       window.voiceflow.chat.open();
                       chatbotOpen = true;
-                      // Optionally, you could reset auto-scroll timer here if needed
                   }, 2000);
               }, 2500);
   
@@ -667,12 +671,12 @@
               window.voiceflow.chat.on('message', vfResetInactivityTimer);
               window.voiceflow.chat.on('open', function() {
                   chatbotOpen = true;
-                  chatbotInUse = false; // Reset on open
+                  chatbotInUse = false;
                   vfResetInactivityTimer();
               });
               window.voiceflow.chat.on('close', function() {
                   chatbotOpen = false;
-                  chatbotInUse = false; // Reset on close
+                  chatbotInUse = false;
                   clearTimeout(vfInactivityTimer);
               });
               window.voiceflow.chat.on('interact', checkChatbotInUse);
@@ -684,6 +688,7 @@
       s.parentNode.insertBefore(v, s);
   })(document, 'script');
 </script>
+
 
 
 
