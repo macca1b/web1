@@ -532,6 +532,7 @@
     <!-- Your footer content here if any -->
 </footer>
 
+
 <script>
   // Global chatbot flags (shared across modules)
   var chatbotOpen = false;
@@ -546,15 +547,21 @@
       let autoScrolling = false;
       let inactivityTimeout;
   
-      // Helper: Update currentSectionIndex based on what is in view
+      // New: Update currentSectionIndex based on the section whose center is closest to the viewport center.
       function updateCurrentSectionIndex() {
+          let bestIndex = currentSectionIndex;
+          let bestDistance = Infinity;
+          let viewportCenter = window.innerHeight / 2;
           sections.forEach((section, index) => {
               let rect = section.getBoundingClientRect();
-              // If the top of the section is near the top half of the viewport, set that as current.
-              if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-                  currentSectionIndex = index;
+              let sectionCenter = rect.top + rect.height / 2;
+              let distance = Math.abs(sectionCenter - viewportCenter);
+              if (distance < bestDistance) {
+                  bestDistance = distance;
+                  bestIndex = index;
               }
           });
+          currentSectionIndex = bestIndex;
       }
   
       function scrollToNextSection() {
@@ -606,15 +613,15 @@
           hoveredCards.forEach(card => card.classList.remove('hover'));
       }
   
-      // New: Resume the hover sequence from the start of the current (visible) section.
+      // Resume the hover sequence from the start of the current section.
       function resumeCurrentSection() {
           clearInterval(hoverInterval);
-          updateCurrentSectionIndex(); // Ensure we are working with the section currently in view
+          updateCurrentSectionIndex(); // Update index based on current viewport position.
           currentCardIndex = 0;
           startHoveringOnCards();
       }
   
-      // Combined handler: stop auto-scroll and reset the inactivity timer.
+      // Combined handler: stops auto-scroll and resets inactivity timer.
       function handleUserInteraction() {
           stopAutoScroll();
           resetInactivityTimer();
@@ -706,6 +713,9 @@
   })(document, 'script');
 </script>
 
+
+
+    
 
 
 
