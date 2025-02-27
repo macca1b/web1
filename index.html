@@ -532,7 +532,6 @@
     <!-- Your footer content here if any -->
 </footer>
 
-
 <script>
   // Global chatbot flags (shared across modules)
   var chatbotOpen = false;
@@ -547,7 +546,7 @@
       let autoScrolling = false;
       let inactivityTimeout;
   
-      // New: Update currentSectionIndex based on the section whose center is closest to the viewport center.
+      // Helper: determine which section is closest to the center of the viewport.
       function updateCurrentSectionIndex() {
           let bestIndex = currentSectionIndex;
           let bestDistance = Infinity;
@@ -568,27 +567,34 @@
           if (currentSectionIndex < sections.length - 1) {
               currentSectionIndex++;
           } else {
-              currentSectionIndex = 0; // Loop back to the first section
+              currentSectionIndex = 0;
           }
-          currentCardIndex = 0; // Reset card index for the new section
+          currentCardIndex = 0;
           sections[currentSectionIndex].scrollIntoView({ behavior: "smooth" });
           setTimeout(startHoveringOnCards, 1000);
       }
   
       function startHoveringOnCards() {
           let cards = sections[currentSectionIndex].querySelectorAll('.bullet-card');
+          // Clear any previous hover state
+          cards.forEach(card => card.classList.remove('hover'));
           if (cards.length > 0) {
+              currentCardIndex = 0;
               hoverOnCard(cards[currentCardIndex]);
               hoverInterval = setInterval(() => {
+                  // Remove highlight from current card
                   cards[currentCardIndex].classList.remove('hover');
                   currentCardIndex++;
                   if (currentCardIndex >= cards.length) {
                       clearInterval(hoverInterval);
-                      setTimeout(scrollToNextSection, 2000); // Wait before moving to next section
+                      // Remove all hover classes to ensure none remain
+                      cards.forEach(card => card.classList.remove('hover'));
+                      // After a brief delay, move to next section
+                      setTimeout(scrollToNextSection, 2000);
                   } else {
                       hoverOnCard(cards[currentCardIndex]);
                   }
-              }, 5000); // Hover on each card for 5 seconds
+              }, 5000);
           } else {
               setTimeout(scrollToNextSection, 5000);
           }
@@ -613,15 +619,15 @@
           hoveredCards.forEach(card => card.classList.remove('hover'));
       }
   
-      // Resume the hover sequence from the start of the current section.
+      // Resume current section: update index based on viewport and restart hover sequence.
       function resumeCurrentSection() {
           clearInterval(hoverInterval);
-          updateCurrentSectionIndex(); // Update index based on current viewport position.
+          updateCurrentSectionIndex();
           currentCardIndex = 0;
           startHoveringOnCards();
       }
   
-      // Combined handler: stops auto-scroll and resets inactivity timer.
+      // Combined handler for user interaction events.
       function handleUserInteraction() {
           stopAutoScroll();
           resetInactivityTimer();
@@ -659,7 +665,7 @@
               }
           }).then(() => {
               let vfInactivityTimer;
-              
+  
               // Proactive message scheduling: push "Hey there!" then open chatbot after 2 seconds.
               setTimeout(function() {
                   window.voiceflow.chat.proactive.push({
@@ -684,7 +690,7 @@
                               }
                           }, 1000);
                       }
-                  }, 8000); // 8 seconds of inactivity for the chatbot
+                  }, 8000); // 8 seconds inactivity for the chatbot
               }
   
               function checkChatbotInUse() {
@@ -713,6 +719,7 @@
   })(document, 'script');
 </script>
 
+    
 
 
     
