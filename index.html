@@ -672,6 +672,7 @@
               let vfInactivityTimer;
               
               // Proactive message scheduling: push "Hey there!" then open chatbot after 2 seconds.
+              /*
               setTimeout(function() {
                   window.voiceflow.chat.proactive.push({
                       type: 'text',
@@ -682,7 +683,8 @@
                       chatbotOpen = true;
                   }, 2000);
               }, 2500);
-  
+  */
+              
               function vfResetInactivityTimer() {
                   clearTimeout(vfInactivityTimer);
                   vfInactivityTimer = setTimeout(function() {
